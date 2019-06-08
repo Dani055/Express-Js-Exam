@@ -76,10 +76,7 @@ module.exports = {
         try{
             let userId = req.user._id;
             let user = await User.findById(userId)
-            .populate('teams');
-
-
-
+            .populate({path: 'teams', populate:{path: 'projects'}});
             res.render('users/profile', user)
         }
         catch(e){

@@ -12,16 +12,17 @@
             </form>
             {{/each}}
             {{else}}
-                <p>You have no teams</p>
+            <p>You have no teams</p>
             {{/if}}
 
         </div>
         <div class="more-info">
             <h3>My Projects</h3>
-            {{!-- {{#each projects}}
-        <p>{{this.name}}</p>
-      {{/each}}  --}}
-            beshe me murzel lmao
+            {{#each teams}}
+                {{#each this.projects}}
+                <p>{{this.name}}</p>
+                {{/each}}
+            {{/each}}
         </div>
     </div>
 </div>
